@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Management App | Todo List</title>
+  <meta name="description" content="A dynamic client-side todo list with localStorage persistence." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>My Tasks</h1>
+      <p id="counter" class="app__counter">0 tasks</p>
+    </header>
+
+    <form id="task-form" class="task-form" autocomplete="off">
+      <input
+        id="task-input"
+        type="text"
+        placeholder="Add a new task..."
+        aria-label="New task"
+        required
+      />
+      <button type="submit" aria-label="Add task">Add</button>
+    </form>
+
+    <div class="filters" role="tablist">
+      <button class="filter active" data-filter="all" role="tab">All</button>
+      <button class="filter" data-filter="active" role="tab">Active</button>
+      <button class="filter" data-filter="completed" role="tab">Completed</button>
+      <button class="filter filter--danger" id="clear-completed" type="button">Clear Completed</button>
+    </div>
+
+    <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+    <p id="empty-state" class="empty-state">No tasks yet. Add one above!</p>
+  </main>
+
+  <footer class="footer">
+    Built with HTML, CSS &amp; JavaScript • Data stored in your browser
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
